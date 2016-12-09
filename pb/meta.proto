@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+package pb;
+
+message MetaData {
+    string path = 1;
+    enum FileSystemElement {
+        CONTAINER = 0;
+        FILE = 1;
+    }
+    FileSystemElement type = 2;
+    int64 size = 3;
+    int64 server_modified = 4;
+    string checksum = 5;
+}

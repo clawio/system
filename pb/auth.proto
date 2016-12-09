@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package pb;
+
+import "empty.proto";
+import "user.proto";
+
+service Auth {
+    rpc Authenticate(Credentials) returns (Token);
+    rpc Whoami(Empty) returns (User);
+}
+
+message Credentials {
+	string value = 1;
+	string opaque = 2;
+}
+
+message Token {
+    string value = 1;
+    string opaque = 2;
+}
+
